@@ -1,19 +1,16 @@
 #!/bin/bash
-set -e  # arrête le script si une commande échoue
+set -e  # stop on error
+
+# Installer eas-cli localement dans le projet
+npm install eas-cli
 
 # Vérifie que le token Expo est défini
 if [ -z "$EXPO_TOKEN" ]; then
-  echo "❌ EXPO_TOKEN is not set!"
+  echo "ERROR: EXPO_TOKEN n'est pas défini !"
   exit 1
 fi
 
 echo "✅ Using Expo token and building platform: android"
 
-# Installe la CLI EAS si nécessaire
-npm install -g eas-cli
-
-# Login programmatique avec token
-eas login --token "$EXPO_TOKEN"
-
-# Lance le build Android
-eas build --platform android --profile production --non-interactive
+# Build EAS directement avec le token déjà défini dans l'environnement
+EAS_NO_VCS=1 eas build --platform android --profile production --non-interactive
