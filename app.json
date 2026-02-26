@@ -29,6 +29,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f22e7897-63c7-47ed-8ef9-8639b6a39ee3"
+      }
+    },
+    "owner": "pachecopmpmpgmail.com"
   }
 }
