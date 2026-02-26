@@ -1,15 +1,7 @@
 {
-  "cli": {
-    "version": ">= 3.50.0"
-  },
   "build": {
     "production": {
-      "android": {
-        "buildType": "apk"
-      },
-      "ios": {
-        "simulator": false
-      }
+      "android": { "buildType": "apk" }
     }
   }
 }
